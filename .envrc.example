@@ -1,0 +1,4 @@
+use nix
+layout poetry
+export PYTHONDONTWRITEBYTECODE=1
+export PYTHONBREAKPOINT="pudb.set_trace"
