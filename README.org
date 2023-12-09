@@ -1,8 +1,35 @@
 * strava-to-sqlite
-** Links
-- [[https://communityhub.strava.com/][Support, Learning, Discussions, Ideas - Strava Community Hub]]
-- [[https://developers.strava.com/docs/#client-code][Strava Developers]]
-- [[https://developers.strava.com/docs/rate-limits/][Strava Developers Rate Limits]]
-- [[https://developers.strava.com/docs/getting-started/#account][Strava Developers  - Getting started]]
-- [[https://developers.strava.com/docs/authentication/][Strava Developers Auth]]
-- https://developers.strava.com/playground/
+** Get started
+*** Install
+#+begin_src shell
+pip install strava-to-sqlite
+#+end_src
+*** Auth and fetch
+#+begin_src shell
+# - Allow auth via browser oauth flow
+# - Saves credentials to database
+strava-to-sqlite auth strava_dump.db
+
+# - Fetches and stores strava activities since last sync for all users
+strava-to-sqlite sync strava_dump.db
+#+end_src
+*** Explore
+Strava API sends [[https://developers.google.com/maps/documentation/routes/polylinedecoder][polylines]] which are transformed to [[https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.4][GeoJSON LineString]] by ~strava-to-sqlite~ and can rendered on map with [[https://datasette.io/plugins/datasette-leaflet-geojson][datasette-leaflet-geojson]] and [[https://datasette.io/][datasette]].
+#+begin_src shell
+# assuming datasette is installed
+datasette install datasette-leaflet-geojson
+datasette strava_dump.db
+#+end_src
+** Roadmap
+- [ ] Overall clean-up/refactor
+- [ ] Add tests
+- [ ] Client side rate-limiting and retries
+- [ ] Option to fetch for individual user (currently fetches for all authenticated users)
+** Links, Resources and Thanks
+- Strava: [[https://communityhub.strava.com/][Forum]] | [[https://developers.strava.com/docs/#client-code][Strava API]] | [[https://developers.strava.com/docs/rate-limits/][Rate Limits]] | [[https://developers.strava.com/docs/authentication/][Auth]] | [[https://developers.strava.com/playground/][Swagger UI]]
+- Similar Projects
+  - [[https://github.com/stravalib/stravalib][stravalib/stravalib]]
+  - [[https://github.com/brendano257/Strava2SQL][brendano257/Strava2SQL]]
+  - [[https://github.com/ghing/strava-to-sqlite][ghing/strava-to-sqlite]]
+  - [[https://github.com/yihong0618/running_page][yihong0618/running_page]]
+  - [[https://github.com/marcusvolz/strava_py][marcusvolz/strava_py]]

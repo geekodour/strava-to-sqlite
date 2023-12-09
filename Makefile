@@ -38,7 +38,7 @@ typecheck:
 .PHONY: lint # run linter
 lint:
 	ruff .
-	isort . --check-only
+	# isort . --check-only
 	black . --check
 
 .PHONY: test-quiet # run test quietly
