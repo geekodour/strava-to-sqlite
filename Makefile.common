@@ -7,18 +7,10 @@
 # ╱┊┈╱┉▕┉┋╲┈
 .DEFAULT_GOAL := help
 MKCOM_LOC = https://raw.githubusercontent.com/geekodour/t/main/Makefile.common
-TEMPLATE_PLACEHOLDER = bake
 .PHONY: update-makefile-common # Update Makefile.common with the latest version of it
 update-makefile-common:
 	wget -O Makefile.common.latest ${MKCOM_LOC}
 	mv Makefile.common.latest Makefile.common
-
-.PHONY: show-template-placeholder # show all the file content and filenames w template placeholder
-show-template-placeholder:
-	@echo "File contents:"
-	@rg -g "!.venv" -g "!.git" -g "!vendor" -uu ${TEMPLATE_PLACEHOLDER}
-	@echo "Files:"
-	@fd ${TEMPLATE_PLACEHOLDER}
 
 .PHONY: help # Generate list of targets with descriptions
 help:

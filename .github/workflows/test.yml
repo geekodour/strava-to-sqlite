@@ -19,7 +19,7 @@ jobs:
         run: pipx install poetry
       - name: Install ruff
         run: pipx install ruff
-      - uses: actions/setup-python@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
           cache: "poetry" # see https://github.com/actions/setup-python#caching-packages-dependencies

@@ -1,29 +1,34 @@
 [tool.poetry]
-name = "bake-python"
+name = "strava-to-sqlite"
 version = "0.1.0"
-description = "A bakeshop"
+description = "Create a SQLite database containing data pulled from Strava"
 authors = ["Hrishikesh Barman <oss@geekodour.org>"]
 license = "MIT"
-readme = "README.org"
-packages = [{include = "bake", from = "src"}]
+readme = "docs/README.md"
+packages = [{include = "strava_to_sqlite", from = "src"}]
+
+[tool.poetry.scripts]
+strava-to-sqlite = "strava_to_sqlite.cli:cli"
 
 [tool.poetry.dependencies]
 # tool.*.group.*.dependencies$ : These can only be installed via poetry
 # tool.poetry.*$ : These can be installed via pip also
 python = "^3.11"
 structlog = "^23.1.0"
+sqlite-utils = "^3.36"
+click = "^8.1.7"
 
 [tool.poetry.group.dev.dependencies]
 pudb = "^2022.1.3" # debugging
 ipython = "^8.13.2" # debugging
 snoop = "^0.4.3" # debugging
 isort = "^5.12.0" # import sort
-# ruff = "^0.0.270" # linter, not installing here cuz nixos
 black = "^23.3.0" # formatter
+# ruff = "^0.0.270" # linter, not installing here cuz nixos
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.3.1"
-mypy = "^1.3.0"
+mypy = "^1.7.0"
 
 [tool.pytest.ini_options]
 log_cli = true

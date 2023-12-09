@@ -1,16 +1,8 @@
-A barebones cookiecutter for personal python projects
-
-* Getting started
-** Prerequisites
-** Installation
-** Examples
-* Usage
-* Clarifications
-FAQ type clarifications.
-* Contributing
-All contribution happens through PRs, any contributions is greatly appreciated, here are some ideas:
-- Bugfixes are welcome
-- Features are welcome
-- Tests are welcome
-- Suggestions & Criticism are welcome
-* Acknowledgements
+* strava-to-sqlite
+** Links
+- [[https://communityhub.strava.com/][Support, Learning, Discussions, Ideas - Strava Community Hub]]
+- [[https://developers.strava.com/docs/#client-code][Strava Developers]]
+- [[https://developers.strava.com/docs/rate-limits/][Strava Developers Rate Limits]]
+- [[https://developers.strava.com/docs/getting-started/#account][Strava Developers  - Getting started]]
+- [[https://developers.strava.com/docs/authentication/][Strava Developers Auth]]
+- https://developers.strava.com/playground/

@@ -2,7 +2,7 @@ import logging
 
 import pytest
 
-from bake import kitchen
+from strava_to_sqlite import kitchen
 
 L = logging.getLogger(__name__)
 
