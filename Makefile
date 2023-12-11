@@ -16,6 +16,18 @@ deps-show:
 package-publish:
 	poetry publish
 
+.PHONY: package-publish-test # publish to test.pypi
+package-publish-test:
+	poetry publish -r test-pypi
+
+.PHONY: package-version-bump-patch # bump patch version
+package-version-bump-patch:
+	poetry version patch
+
+.PHONY: package-version-bump-prerelease # bump prerelease version
+package-version-bump-prerelease:
+	poetry version prerelease
+
 .PHONY: package-build # build source and wheel
 package-build:
 	poetry build
