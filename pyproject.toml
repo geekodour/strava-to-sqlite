@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "strava-to-sqlite"
-version = "0.1.0"
+version = "0.1.1"
 description = "Create a SQLite database containing data pulled from Strava"
 authors = ["Hrishikesh Barman <oss@geekodour.org>"]
 license = "MIT"
