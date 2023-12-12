@@ -76,7 +76,7 @@ def auth(db_path):
     type=click.Path(file_okay=True, dir_okay=False, allow_dash=False),
     required=True,
 )
-def sync(db_path, username):
+def sync(db_path):
     db = sqlite_utils.Database(db_path)
     # NOTE: Since all users at the moment are using their own API keys, this
     # can be run in parallel later.
